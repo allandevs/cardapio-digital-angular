@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrincipalComponent } from './principal.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LayoutModule } from '../layout.module';
 
 describe('PrincipalComponent', () => {
   let component: PrincipalComponent;
