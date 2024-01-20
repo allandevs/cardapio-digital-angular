@@ -1,4 +1,4 @@
-name: Test CI
+name: Continuos Integration
 
 on: pull_request
 
@@ -12,7 +12,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18.
-      - name: run install,test
+      - name: run install, build and test
         run: |
           npm install
+          npm run lint
           npm run test:ci
+          npm run build
