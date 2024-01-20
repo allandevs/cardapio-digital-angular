@@ -1,0 +1,96 @@
+{
+  "categorias": [
+    {
+      "nome": "Hamburguers",
+      "itens": [
+        {
+          "id": 1,
+          "nome": "Clássico",
+          "preco": 29.9,
+          "descricao": " Carne suculenta de 140g, muçarela derretida, tomate fresco e maionese de alho, servidos em um pão Brioche macio!!",
+          "imagem": "https://img.freepik.com/fotos-gratis/ainda-vida-de-delicioso-hamburguer-americano_23-2149637312.jpg?w=360&t=st=1705718132~exp=1705718732~hmac=90215ab9b71cc583e51283e5c14deb98b7781880b29c709f305764fcd2790508"
+        },
+        {
+          "id": 2,
+          "nome": "Espetaculoso",
+          "preco": 37.9,
+          "descricao": "Carne suculenta de 140g, muçarela derretida, tomate fresco e maionese de alho, servidos em um pão Brioche macio!!",
+          "imagem": "https://img.freepik.com/fotos-premium/burger-costeleta-dupla-queijo-cheddar-duplo-bacon-cebola-frita-picles-molho-e-pao-artesanal_524291-99.jpg?w=900"
+        },
+        {
+          "id": 3,
+          "nome": "Oliver Tudo",
+          "preco": 49.99,
+          "descricao": "Carne suculenta de 140g, muçarela derretida, tomate fresco e maionese de alho, servidos em um pão Brioche macio!!",
+          "imagem": "https://img.freepik.com/fotos-gratis/cheeseburguer-grelhado-com-tomate-cebola-e-fritas-gerado-por-ia_188544-43039.jpg?w=1060&t=st=1705717341~exp=1705717941~hmac=08db11afcb3cd2744e119bde8c79f5dd2ff2d07fab9335801837b336b2eb6522"
+        }
+      ]
+    },
+    {
+      "nome": "Entradas",
+      "itens": [
+        {
+          "id": 4,
+          "nome": "Batata Palito",
+          "preco": 24.9,
+          "descricao": "Porção de batata palito, serve até 2 pessoas.",
+          "imagem": "https://img.freepik.com/fotos-gratis/vista-superior-deliciosas-batatas-fritas-e-molho_23-2149235944.jpg?w=360&t=st=1705764802~exp=1705765402~hmac=7d2f2cbae2afcea8445236a651cdecd7f90b64f2162c193fcd0cf48b360e553d"
+        },
+        {
+          "id": 5,
+          "nome": "Batata Turbo",
+          "preco": 39.99,
+          "descricao": "Porção de batata palito ou canoa com MUITO creme cheddar e farofa de bacon.",
+          "imagem": "https://img.freepik.com/fotos-premium/porcao-de-batatas-fritas-com-bacon-alface-cebola-verde-tomate-ketchup-e-maionese_309665-809.jpg?w=360"
+        },
+        {
+          "id": 6,
+          "nome": "Batata Canoa",
+          "preco": 29.9,
+          "descricao": "Porção de batata canoa, serve até 2 pessoas",
+          "imagem": "https://img.freepik.com/fotos-premium/rodas-de-batata-assadas-com-alecrim-e-alho-em-um-fundo-escuro_2829-791.jpg?w=996"
+        }
+      ]
+    },
+    {
+      "nome": "Sobremesas",
+      "itens": [
+        {
+          "id": 7,
+          "nome": "Aventuras de Sherlock Holmes",
+          "preco": 9.99
+        },
+        {
+          "id": 8,
+          "nome": "O Senhor dos Anéis",
+          "preco": 29.99
+        },
+        {
+          "id": 9,
+          "nome": "O Pequeno Príncipe",
+          "preco": 14.99
+        }
+      ]
+    },
+    {
+      "nome": "Bebidas",
+      "itens": [
+        {
+          "id": 10,
+          "nome": "Aventuras de Sherlock Holmes",
+          "preco": 9.99
+        },
+        {
+          "id": 11,
+          "nome": "O Senhor dos Anéis",
+          "preco": 29.99
+        },
+        {
+          "id": 12,
+          "nome": "O Pequeno Príncipe",
+          "preco": 14.99
+        }
+      ]
+    }
+  ]
+}

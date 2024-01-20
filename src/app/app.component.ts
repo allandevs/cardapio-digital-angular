@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
+import * as packages from './../../package.json';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: '<router-outlet></router-outlet>',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'app-oliver-cardapio';
+  @HostBinding('attr.app-version') version = packages.version;
 }
