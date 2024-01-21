@@ -3,18 +3,42 @@ name: Continuos Integration
 on: [push, pull_request]
 
 jobs:
-  continuos-integration:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Using Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18.
-      - name: run install, build and test
+      - name: run install, build
+        run: |
+          npm install
+          npm run build
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Using Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.
+      - name: run install, lint
         run: |
           npm install
           npm run lint
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Using Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.
+      - name: run install, test:ci
+        run: |
+          npm install
           npm run test:ci
-          npm run build
