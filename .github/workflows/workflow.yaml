@@ -68,6 +68,6 @@ jobs:
 
       - name: Create Pull Request
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          run: gh pr create -B develop-teste -H $CURRENT_BRANCH --title 'Merge $CURRENT_BRANCH into develop-teste' --body 'Created automatic Pull Request by Github action.'
+        run: gh pr create -B develop-teste -H $CURRENT_BRANCH --title 'Merge $CURRENT_BRANCH into develop-teste' --body 'Created automatic Pull Request by Github action.'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
