@@ -6,7 +6,12 @@ Projeto desenvolvido em angular
 - Gerenciamento de estado com NGXS
 
 📌 Versão
+
 17.0.2
+
+## Visual
+
+![image](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/02fec8be-0180-498b-8183-2e8c06c6255c)
 
 ### Implementações e melhorias
 
