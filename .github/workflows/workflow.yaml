@@ -67,6 +67,6 @@ jobs:
           echo "A branch atual é: $CURRENT_BRANCH"
 
       - name: Create Pull Request
-        run: gh pr create -B develop-teste -H feature/workflow-testes --title 'Merge $CURRENT_BRANCH into develop-teste' --body 'Created automatic Pull Request by Github action.'
+        run: gh pr create -B develop-teste -H "$CURRENT_BRANCH" --title 'Merge "$CURRENT_BRANCH" into develop-teste' --body 'Created automatic Pull Request by Github action.'
         env:
           GH_TOKEN: ${{ github.token }}
