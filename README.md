@@ -1,4 +1,4 @@
-# AppOliverCardapio
+# Aplicação Oliver Cardápio
 
 Projeto desenvolvido em angular
 
@@ -7,6 +7,10 @@ Projeto desenvolvido em angular
 
 📌 Versão
 17.0.2
+
+### Implementações e melhorias
+
+O projeto ainda está em fase de desenvolvimento
 
 ## 🚀 Começando
 
