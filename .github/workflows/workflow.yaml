@@ -69,4 +69,4 @@ jobs:
       - name: Create Pull Request
         run: gh pr create -B develop-teste -H feature/workflow-testes --title 'Merge feature/workflow-testes into develop-teste' --body 'Created automatic Pull Request by Github action.'
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GH_TOKEN: ${{ secrets.GIT_TOKEN }}
