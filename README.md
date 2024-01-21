@@ -11,7 +11,7 @@ Projeto desenvolvido em angular
 
 ## Visual
 
-![image](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/acf3beba-95a2-409d-8017-9a5f72dad277)
+![image](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/02fec8be-0180-498b-8183-2e8c06c6255c)
 
 ### Implementações e melhorias
 
