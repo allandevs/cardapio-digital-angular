@@ -92,16 +92,21 @@ jobs:
           restore-keys: |
             npm-${{ runner.os }}-
       - name: Obter Branch Atual
+        id: get_branch
         run: |
-          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
+          echo "CURRENT_BRANCH=$(echo ${GITHUB_REF#refs/heads/})"
           echo "A branch atual é: $CURRENT_BRANCH"
+        shell: bash
+        env:
+          CURRENT_BRANCH: ${{ steps.get_branch.outputs.CURRENT_BRANCH }}
 
-      - name: Atualizar Pull Request
+      - name: Atualizar ou criar Pull Request
         run: |
           if gh pr list | grep -q "$CURRENT_BRANCH"; then
-            gh pr edit "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Updated automatic Pull Request by GitHub Action."
+            gh pr edit "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Solicitação pull automática atualizada pelo GitHub Action."
           else
-            gh pr create -B develop -H "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Created automatic Pull Request by GitHub Action."
+            gh pr create -B develop -H "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Criado Pull Request automático pelo GitHub Action."
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CURRENT_BRANCH: ${{ steps.get_branch.outputs.CURRENT_BRANCH }}
