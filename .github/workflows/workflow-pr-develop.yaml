@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - feature/**
+      - feat/**
+      - fix/**
 
 jobs:
   lint:
@@ -62,8 +64,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install dependencies
-        run: npm install
       - name: Obter Branch Atual
         run: |
           CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
