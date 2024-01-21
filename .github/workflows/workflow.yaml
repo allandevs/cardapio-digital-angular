@@ -1,4 +1,4 @@
-name: Node.js Workflow
+name: Continuos Integration
 
 on: [push, pull_request]
 
