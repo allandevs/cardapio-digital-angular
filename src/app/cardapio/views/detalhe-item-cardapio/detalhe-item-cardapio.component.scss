@@ -1,0 +1,37 @@
+.card {
+  max-width: 400px;
+  margin-top: 10px;
+
+  img {
+    max-height: 330px;
+  }
+
+  .conteudo {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__preco {
+    display: block;
+    font-size: 1.5rem;
+    padding: 10px 10px;
+    color: #ff0000;
+    text-align: center;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+}
