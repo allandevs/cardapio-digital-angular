@@ -94,7 +94,7 @@ jobs:
       - name: Obter Branch Atual
         id: get_branch
         run: |
-          echo "CURRENT_BRANCH=$(echo ${GITHUB_REF#refs/heads/})"
+          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
           echo "A branch atual é: $CURRENT_BRANCH"
         shell: bash
         env:
