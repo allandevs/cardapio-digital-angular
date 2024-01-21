@@ -59,14 +59,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install dependencies
-        run: npm install
       - name: Obter Branch Atual
         run: |
           CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
           echo "A branch atual é: $CURRENT_BRANCH"
 
       - name: Create Pull Request
-        run: gh pr create -B develop-teste -H "$CURRENT_BRANCH" --title 'Merge "$CURRENT_BRANCH" into develop-teste' --body 'Created automatic Pull Request by GitHub Action.''
+        run: gh pr create -B develop -H "$CURRENT_BRANCH" --title 'Merge "$CURRENT_BRANCH" into develop' --body 'Created automatic Pull Request by GitHub Action.''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
