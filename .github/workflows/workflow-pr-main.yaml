@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -60,7 +60,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -83,7 +83,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -91,6 +91,6 @@ jobs:
             npm-${{ runner.os }}-
 
       - name: Create Pull Request
-        run: gh pr create -B main -H develop --title "Merge develop into main" --body "Created automatic Pull Request by GitHub Action."
+        run: gh pr create -B main -H develop --title "Merge develop into main" --body "Criado Pull Request automático pelo GitHub Action."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
