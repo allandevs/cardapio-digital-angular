@@ -15,6 +15,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
       - name: Install dependencies
         run: npm install
       - name: Run lint
@@ -30,6 +37,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
       - name: Install dependencies
         run: npm install
       - name: Run tests
@@ -45,6 +59,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
       - name: Install dependencies
         run: npm install
       - name: Build
@@ -61,6 +82,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
 
       - name: Create Pull Request
         run: gh pr create -B main -H develop --title "Merge develop into main" --body "Created automatic Pull Request by GitHub Action."
