@@ -1,28 +1,26 @@
 <layout-principal [loading]="processando$ | async" titulo="cardápio Oliver">
-  <div>
-    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-      <mat-tab
-        *ngFor="let categoria of (produtos$ | async)?.categorias"
-        [label]="categoria.nome">
-        <mat-card class="card" *ngFor="let item of categoria.itens">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>{{ item.nome }}</mat-card-title>
-              <mat-card-subtitle>{{
-                item.preco | currency: 'BRL'
-              }}</mat-card-subtitle>
-              <img
-                aria-hidden="true"
-                mat-card-md-image
-                [src]="item.imagem"
-                alt="imagem do produto" />
-            </mat-card-title-group>
-          </mat-card-header>
-          <mat-card-content>
-            {{ item.descricao }}
-          </mat-card-content>
-        </mat-card>
-      </mat-tab>
-    </mat-tab-group>
-  </div>
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+    <mat-tab
+      *ngFor="let categoria of (produtos$ | async)?.categorias"
+      [label]="categoria.nome">
+      <mat-card class="card" *ngFor="let item of categoria.itens">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ item.nome }}</mat-card-title>
+            <mat-card-subtitle>{{
+              item.preco | currency: 'BRL'
+            }}</mat-card-subtitle>
+            <img
+              aria-hidden="true"
+              mat-card-md-image
+              [src]="item.imagem"
+              alt="imagem do produto" />
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          {{ item.descricao }}
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
 </layout-principal>
