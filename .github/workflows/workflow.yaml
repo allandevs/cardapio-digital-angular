@@ -7,38 +7,80 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Using Node.js
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.
-      - name: run install, build
-        run: |
-          npm install
-          npm run build
+          node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm install
+
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Using Node.js
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.
-      - name: run install, lint
+          node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies and lint
         run: |
           npm install
           npm run lint
+
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Using Node.js
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.
-      - name: run install, test:ci
+          node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies and run tests
         run: |
           npm install
           npm run test:ci
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
