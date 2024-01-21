@@ -3,7 +3,7 @@ name: Continuous Integration v1
 on:
   push:
     branches:
-      - develop
+      - feature/**
 
 jobs:
   lint:
