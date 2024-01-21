@@ -1,5 +1,5 @@
 <layout-principal [loading]="processando$ | async" titulo="cardápio Oliver">
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab
       *ngFor="let categoria of (produtos$ | async)?.categorias"
       [label]="categoria.nome">

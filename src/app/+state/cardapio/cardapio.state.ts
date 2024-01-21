@@ -2,19 +2,17 @@ import { Injectable } from '@angular/core';
 import { Action, State, StateContext, Selector } from '@ngxs/store';
 import { CarregarDadosCardapio } from './cardapio.action';
 import { CardapioService } from '../../cardapio/cardapio.service';
-import { tap } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { DadosCardapio } from './models';
 
 export interface CardapioStateModel {
   categorias?: DadosCardapio;
-  processando: boolean;
+  processando$?: boolean;
 }
 
 @State<CardapioStateModel>({
   name: 'cardapio',
-  defaults: {
-    processando: false,
-  },
+  defaults: {},
 })
 @Injectable()
 export class ProdutoState {
@@ -22,7 +20,7 @@ export class ProdutoState {
 
   @Selector()
   static processandoDados(state: CardapioStateModel): boolean {
-    return !!state.processando;
+    return state.processando$ || false;
   }
 
   @Selector()
@@ -32,17 +30,17 @@ export class ProdutoState {
 
   @Action(CarregarDadosCardapio)
   carregarDadosCardapio(ctx: StateContext<CardapioStateModel>) {
-    ctx.patchState({
-      processando: true,
+    ctx.setState({
+      processando$: true,
     });
+
     return this.cardapioService.carregarDadosCardapio().pipe(
-      tap(categorias => {
-        ctx.setState({
-          ...ctx.getState(),
-          categorias,
-          processando: false,
-        });
-      })
+      map(categorias => ({
+        ...ctx.getState(),
+        categorias,
+        processando$: false,
+      })),
+      tap(newState => ctx.setState(newState))
       //catchError(() => ctx.dispatch(new Navigate(['/error'])))
     );
   }

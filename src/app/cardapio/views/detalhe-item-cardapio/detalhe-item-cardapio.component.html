@@ -1,21 +1,21 @@
 <mat-card class="card">
   <mat-card-header>
     <h2>
-      {{ obterDadosItemCardapio().nome }}
+      {{ itemCardapio.nome }}
     </h2>
   </mat-card-header>
   <img
-    [attr.aria-label]="'Imagem do ' + obterDadosItemCardapio().nome"
+    [attr.aria-label]="'Imagem do ' + itemCardapio.nome"
     mat-card-image
-    [src]="obterDadosItemCardapio().imagem"
+    [src]="itemCardapio.imagem"
     alt="imagem item cardapio" />
   <mat-card-content class="conteudo">
     <p>
-      {{ obterDadosItemCardapio().descricao }}
+      {{ itemCardapio.descricao }}
     </p>
   </mat-card-content>
   <span class="card__preco">
-    {{ obterDadosItemCardapio().preco | currency: 'BRL' }}
+    {{ itemCardapio.preco | currency: 'BRL' }}
   </span>
 </mat-card>
 

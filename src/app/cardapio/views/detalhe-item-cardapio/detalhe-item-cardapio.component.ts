@@ -1,4 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  OnInit,
+} from '@angular/core';
 import { ItemCardapio } from '../../models';
 import {
   MAT_BOTTOM_SHEET_DATA,
@@ -9,15 +14,18 @@ import {
   selector: 'app-detalhe-item-cardapio',
   templateUrl: './detalhe-item-cardapio.component.html',
   styleUrl: './detalhe-item-cardapio.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DetalheItemCardapioComponent {
+export class DetalheItemCardapioComponent implements OnInit {
+  itemCardapio!: ItemCardapio;
+
   constructor(
     private bottomSheetRef: MatBottomSheetRef<DetalheItemCardapioComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: ItemCardapio
   ) {}
 
-  obterDadosItemCardapio(): ItemCardapio {
-    return this.data;
+  ngOnInit() {
+    this.itemCardapio = this.data;
   }
 
   fechar(event: MouseEvent): void {

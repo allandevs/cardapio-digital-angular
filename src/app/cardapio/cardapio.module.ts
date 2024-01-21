@@ -16,15 +16,14 @@ const moduleMaterial = [
   MatTabsModule,
   MatBottomSheetModule,
 ];
-
+const views = [ProdutosComponent, DetalheItemCardapioComponent];
 @NgModule({
-  declarations: [ProdutosComponent, DetalheItemCardapioComponent],
+  declarations: [...views],
   imports: [
     CommonModule,
     CardapioRoutingModule,
     LayoutModule,
     ...moduleMaterial,
   ],
-  exports: [ProdutosComponent],
 })
 export class CardapioModule {}
