@@ -1,27 +1,66 @@
-# AppOliverCardapio
+# Aplicação Oliver Cardápio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Projeto desenvolvido em angular
 
-## Development server
+- Cardápio digital
+- Gerenciamento de estado com NGXS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+📌 Versão
+17.0.2
 
-## Code scaffolding
+### Implementações e melhorias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O projeto ainda está em fase de desenvolvimento
+
+## 🚀 Começando
+
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+
+## Estrutura
+
+|-- app
+|-- +state
+|-- cardapio
+|-- [+] components
+|-- [+] models
+|-- [+] views
+|-- cardapio.module.ts
+|-- cardapio.routing.module.ts
+|-- cardapio.service.ts
+|-- layout
+|-- error
+
+## 📋 Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+- Node.js 18x (https://nodejs.org/)
+- Npm (https://www.npmjs.com/) (normalmente vem com o Node.js)
+- Angular CLI (https://angular.io/cli)
+
+## 🔧 Configurar
+
+Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+
+- git clone `https://github.com/allandevs/cardapio-digital-angular.git`
+- npm install
+
+## Servidor de desenvolvimento
+
+Execute `npm run start` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `npm run build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`.
 
-## Running unit tests
+## ⚙️ Executando os testes unitários
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `npm run test:ci` para executar os testes de unidade via Jest.
 
-## Running end-to-end tests
+## Executando lint
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Execute `npm run lint` para executar análise de erros de código
 
-## Further help
+## ✒️ Autor
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Allan Fonseca de Oliveira
