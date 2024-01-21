@@ -2,7 +2,7 @@
 
 ![Oliver Cardápio Digital](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/02fec8be-0180-498b-8183-2e8c06c6255c)
 
-Este projeto foi desenvolvido utilizando Angular e serve como um sistema de menu digital. Principais recursos e tecnologias incluem:
+Este projeto está em fase desenvolvimento utilizando Angular e serve como um sistema de menu digital. Principais recursos e tecnologias incluem:
 
 - Exibição do menu digital
 - Gerenciamento de estado com NGXS
