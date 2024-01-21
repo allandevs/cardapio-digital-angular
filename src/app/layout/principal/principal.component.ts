@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PrincipalComponent {
   @Input() loading!: boolean | null;
+  @Input() titulo!: string;
 }

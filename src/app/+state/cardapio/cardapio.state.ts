@@ -3,7 +3,7 @@ import { Action, State, StateContext, Selector } from '@ngxs/store';
 import { CarregarDadosCardapio } from './cardapio.action';
 import { CardapioService } from '../../cardapio/cardapio.service';
 import { tap } from 'rxjs';
-import { DadosCardapio } from '../models';
+import { DadosCardapio } from './models';
 
 export interface CardapioStateModel {
   categorias?: DadosCardapio;

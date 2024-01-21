@@ -57,18 +57,24 @@
       "itens": [
         {
           "id": 7,
-          "nome": "Aventuras de Sherlock Holmes",
-          "preco": 9.99
+          "nome": "MilkShake c/ Chantilly",
+          "preco": 24.9,
+          "descricao": "chocolate, ovomaltine ou doce de leite com paçoca. 380 ML",
+          "imagem": "https://img.freepik.com/fotos-gratis/bebida-de-cafe-coberta-com-chantilly_140725-2726.jpg?w=740&t=st=1705854413~exp=1705855013~hmac=0fd50eabf062e0fa1886aa20e493c9c6f6dc9cf5a8d7d53d51a2dead2b90b13c"
         },
         {
           "id": 8,
-          "nome": "O Senhor dos Anéis",
-          "preco": 29.99
+          "nome": "Brownie de copo",
+          "preco": 29.9,
+          "descricao": "Pedacinhos de puro deleite em chocolate, acompanhados de um creme branco exclusivo, harmonizado com uma luxuosa camada de ganache e finalizado com morangos frescos. Cada mordida é um convite ao paraíso dos sabores.",
+          "imagem": "https://as1.ftcdn.net/v2/jpg/06/38/97/56/1000_F_638975690_envnFFPfWSdlWfjeU4b0oPi2vC6xvVHW.jpg"
         },
         {
           "id": 9,
-          "nome": "O Pequeno Príncipe",
-          "preco": 14.99
+          "nome": "Torta espetacular da casa",
+          "preco": 34.9,
+          "descricao": "massa da casa, cream cheese, leite condensado, suco de limão e ovos. E uma incrível geleia caseira de frutas vermelhas como cobertura.",
+          "imagem": "https://as1.ftcdn.net/v2/jpg/06/38/41/16/1000_F_638411643_vwwQUYB8PjdfabzLYuXXA4jNQeJVw2tF.jpg"
         }
       ]
     },
@@ -77,18 +83,24 @@
       "itens": [
         {
           "id": 10,
-          "nome": "Aventuras de Sherlock Holmes",
-          "preco": 9.99
+          "nome": "Refrigerante lata",
+          "preco": 7.9,
+          "descricao": "",
+          "imagem": "https://img.freepik.com/fotos-premium/lata-de-bebida-vermelha-com-condensacao-em-cubos-de-gelo_950125-921.jpg?w=740"
         },
         {
           "id": 11,
-          "nome": "O Senhor dos Anéis",
-          "preco": 29.99
+          "nome": "Agua mineral 500ml",
+          "preco": 5.0,
+          "descricao": "",
+          "imagem": "https://img.freepik.com/fotos-premium/beber-agua-em-uma-garrafa-isolada-em-branco_770123-1120.jpg?w=360"
         },
         {
           "id": 12,
-          "nome": "O Pequeno Príncipe",
-          "preco": 14.99
+          "nome": "Cerveja",
+          "preco": 14.9,
+          "descricao": "pergunte as cervejas disponíveis",
+          "imagem": "https://img.freepik.com/fotos-gratis/vista-frontal-de-copos-de-cerveja-com-trigo_23-2148755010.jpg?w=360&t=st=1705855717~exp=1705856317~hmac=d15b83afb70a8dc0478cb0d8482aa0f8c184af75bfdeb87d9a12d13539c30971"
         }
       ]
     }
