@@ -3,84 +3,23 @@ name: Continuos Integration
 on: [push, pull_request]
 
 jobs:
-  build:
+  continuos-integration:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Setup Node.js
+      - uses: actions/checkout@v4
+      - name: Using Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          node-version: 18.
       - name: Install dependencies
         run: npm install
 
-  lint:
-    runs-on: ubuntu-latest
+      - name: Run lint
+        run: npm run lint
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies and lint
-        run: |
-          npm install
-          npm run lint
+      - name: Run tests
+        run: npm run test:ci
 
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies and run tests
-        run: |
-          npm install
-          npm run test:ci
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
+      - name: Build
+        run: npm run build
