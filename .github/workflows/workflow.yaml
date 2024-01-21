@@ -63,7 +63,7 @@ jobs:
         run: npm install
 
       - name: Create Pull Request
-        uses: octokit/create-pull-request@v3
+        uses: allandevs/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Automated changes'
