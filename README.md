@@ -2,7 +2,7 @@
 
 ![Oliver Cardápio Digital](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/02fec8be-0180-498b-8183-2e8c06c6255c)
 
-Este projeto está em fase desenvolvimento utilizando Angular e serve como um sistema de menu digital. Principais recursos e tecnologias incluem:
+Este projeto está em fase de desenvolvimento utilizando Angular. Ele permite que estabelecimentos, como restaurantes, criem seus cardápios de forma digital, facilitando a visualização e interação dos clientes com os itens disponíveis. Principais recursos e tecnologias incluem:
 
 - Exibição do menu digital
 - Gerenciamento de estado com NGXS
@@ -10,9 +10,23 @@ Este projeto está em fase desenvolvimento utilizando Angular e serve como um si
 - Integração contínua
 - Criação automática de pull requests usando GitHub Actions
 
-## Versão
+## Funcionalidades
+
+- **Navegação Intuitiva:** Interface amigável e de fácil navegação para os clientes explorarem o cardápio.
+
+- **Categorias e Itens:** Organização eficiente por categorias, facilitando a busca por tipos específicos de alimentos ou bebidas.
+
+- **Pedidos Online:** Capacidade de fazer pedidos diretamente pela aplicação, oferecendo uma experiência de compra integrada.(será desenvolvido na versão 2.0.0)
+
+- **Gestão de Pedidos:** Ferramenta para os estabelecimentos acompanharem os pedidos recebidos, gerenciando o status e a entrega. (será desenvolvido na versão 3.0.0)
+
+## Versão Angular
 
 17.0.2
+
+## Versão App Cardápio Digital
+
+1.0.0
 
 ## Iniciando
 
