@@ -18,7 +18,7 @@ export class CardapioService {
         return throwError(
           () =>
             new Error(
-              'Ocorreu um erro. Por favor, tente novamente mais tarde.' +
+              'Ocorreu um erro ao tentar carregar os dados do cardápio' +
                 JSON.stringify(error)
             )
         );

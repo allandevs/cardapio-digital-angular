@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Action, State, StateContext, Selector } from '@ngxs/store';
 import { CarregarDadosCardapio } from './cardapio.action';
 import { CardapioService } from '../../cardapio/cardapio.service';
-import { map, tap } from 'rxjs';
+import { catchError, map, tap } from 'rxjs';
 import { DadosCardapio } from './models';
+import { Navigate } from '@ngxs/router-plugin';
 
 export interface CardapioStateModel {
   categorias?: DadosCardapio;
@@ -40,8 +41,11 @@ export class ProdutoState {
         categorias,
         processando$: false,
       })),
-      tap(newState => ctx.setState(newState))
-      //catchError(() => ctx.dispatch(new Navigate(['/error'])))
+      tap(newState => ctx.setState(newState)),
+      catchError(error => {
+        console.error(error);
+        return ctx.dispatch(new Navigate(['/error']));
+      })
     );
   }
 }
