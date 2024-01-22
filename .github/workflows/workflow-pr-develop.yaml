@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -62,7 +62,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -85,7 +85,7 @@ jobs:
         with:
           node-version: 18
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -99,7 +99,7 @@ jobs:
       - name: Atualizar ou criar Pull Request
         run: |
           if gh pr list | grep -q "$CURRENT_BRANCH"; then
-            gh pr edit "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Solicitação pull automática atualizada pelo GitHub Action."
+            gh pr edit "$CURRENT_BRANCH" --body "Solicitação pull automática atualizada pelo GitHub Action."
           else
             gh pr create -B develop -H "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Criado Pull Request automático pelo GitHub Action."
           fi

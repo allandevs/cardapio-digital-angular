@@ -1,0 +1,26 @@
+<mat-card class="card">
+  <mat-card-header>
+    <h2>
+      {{ itemCardapio.nome }}
+    </h2>
+  </mat-card-header>
+  <img
+    [attr.aria-label]="'Imagem do ' + itemCardapio.nome"
+    mat-card-image
+    [src]="itemCardapio.imagem"
+    alt="imagem item cardapio" />
+  <mat-card-content class="conteudo">
+    <p>
+      {{ itemCardapio.descricao }}
+    </p>
+  </mat-card-content>
+  <span class="card__preco">
+    {{ itemCardapio.preco | currency: 'BRL' }}
+  </span>
+</mat-card>
+
+<footer>
+  <button mat-stroked-button color="primary" (click)="fechar($event)">
+    Fechar
+  </button>
+</footer>

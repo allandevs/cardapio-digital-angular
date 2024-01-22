@@ -84,4 +84,4 @@ Execute `npm run lint` para realizar a análise de erros de código.
 
 ## Autor
 
-Allan Fonseca de Oliveira
+Allan Fonseca de Oliveira -

@@ -6,17 +6,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from '../layout/layout.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { DetalheItemCardapioComponent } from './views/detalhe-item-cardapio/detalhe-item-cardapio.component';
 
-const moduleMaterial = [MatButtonModule, MatCardModule, MatTabsModule];
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
+const moduleMaterial = [
+  MatButtonModule,
+  MatCardModule,
+  MatTabsModule,
+  MatBottomSheetModule,
+];
+const views = [ProdutosComponent, DetalheItemCardapioComponent];
 @NgModule({
-  declarations: [ProdutosComponent],
+  declarations: [...views],
   imports: [
     CommonModule,
     CardapioRoutingModule,
     LayoutModule,
     ...moduleMaterial,
   ],
-  exports: [ProdutosComponent],
 })
 export class CardapioModule {}

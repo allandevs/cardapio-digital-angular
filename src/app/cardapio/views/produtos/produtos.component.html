@@ -1,9 +1,12 @@
 <layout-principal [loading]="processando$ | async" titulo="cardápio Oliver">
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab
       *ngFor="let categoria of (produtos$ | async)?.categorias"
       [label]="categoria.nome">
-      <mat-card class="card" *ngFor="let item of categoria.itens">
+      <mat-card
+        class="card"
+        *ngFor="let item of categoria.itens"
+        (click)="abrirItemCardapio(item)">
         <mat-card-header>
           <mat-card-title-group>
             <mat-card-title>{{ item.nome }}</mat-card-title>
@@ -17,7 +20,7 @@
               alt="imagem do produto" />
           </mat-card-title-group>
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content class="conteudo-descricao">
           {{ item.descricao }}
         </mat-card-content>
       </mat-card>
