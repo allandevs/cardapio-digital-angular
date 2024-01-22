@@ -10,15 +10,19 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 describe('DetalheItemCardapioComponent', () => {
   let component: DetalheItemCardapioComponent;
   let fixture: ComponentFixture<DetalheItemCardapioComponent>;
+  let bottomSheetRefMock: jest.Mocked<MatBottomSheetRef>;
 
   beforeEach(() => {
+    bottomSheetRefMock = {
+      dismiss: jest.fn(),
+    } as unknown as jest.Mocked<MatBottomSheetRef>;
     TestBed.configureTestingModule({
       declarations: [DetalheItemCardapioComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         {
           provide: MatBottomSheetRef,
-          useValue: {},
+          useValue: bottomSheetRefMock,
         },
         {
           provide: MAT_BOTTOM_SHEET_DATA,
@@ -34,5 +38,14 @@ describe('DetalheItemCardapioComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('deve fechar o componente MatBottomSheetRef corretamente', () => {
+    const eventMock: Partial<MouseEvent> = { preventDefault: jest.fn() };
+
+    component.fechar(eventMock as MouseEvent);
+
+    expect(bottomSheetRefMock.dismiss).toHaveBeenCalled();
+    expect(eventMock.preventDefault).toHaveBeenCalled();
   });
 });
