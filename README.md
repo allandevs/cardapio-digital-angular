@@ -1,8 +1,7 @@
 # Aplicação Oliver Cardápio Digital
 
 ![Oliver Cardápio Digital](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/02fec8be-0180-498b-8183-2e8c06c6255c)
-![image](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/2d08db98-f302-4f2a-9c0c-bca42ad33d05)
-
+![image](https://github.com/allandevs/cardapio-digital-angular/assets/66088842/aacbf7f5-5723-4b6f-baf2-3486d0615336)
 
 Este projeto está em fase de desenvolvimento utilizando Angular. Ele permite que estabelecimentos, como restaurantes, criem seus cardápios de forma digital, facilitando a visualização e interação dos clientes com os itens disponíveis. Principais recursos e tecnologias incluem:
 
