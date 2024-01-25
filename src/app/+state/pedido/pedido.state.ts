@@ -1,11 +1,8 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
-import { Pedido } from './models';
-import { AdicionarPedido, RemoverPedido } from './pedido.action';
+import { Pedido } from '../../shared/models/pedido';
+import { AdicionarPedido, CalcularTotal, RemoverPedido } from './pedido.action';
 import { Injectable } from '@angular/core';
-
-export interface PedidoStateModel {
-  pedidos: Pedido[];
-}
+import { PedidoStateModel } from './models/pedido-state.model';
 
 @State<PedidoStateModel>({
   name: 'pedido',
@@ -18,6 +15,11 @@ export class PedidoState {
   @Selector()
   static getPedidos(state: PedidoStateModel): Pedido[] {
     return state.pedidos;
+  }
+
+  @Selector()
+  static getTotal(state: PedidoStateModel) {
+    return state.total;
   }
 
   @Action(AdicionarPedido)
@@ -37,5 +39,21 @@ export class PedidoState {
     ctx.setState({
       pedidos: state.pedidos.filter(pedido => pedido.id !== action.pedidoId),
     });
+  }
+
+  @Action(CalcularTotal)
+  calcularTotal(ctx: StateContext<PedidoStateModel>) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      total: PedidoState.calcularTotal(state.pedidos),
+    });
+  }
+
+  private static calcularTotal(pedidos: Pedido[]): number {
+    return pedidos.reduce(
+      (total, pedido) => total + pedido.quantidade * pedido.preco,
+      0
+    );
   }
 }

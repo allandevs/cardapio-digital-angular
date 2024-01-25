@@ -2,14 +2,15 @@ import { TestBed } from '@angular/core/testing';
 import { NgxsModule, Store } from '@ngxs/store';
 
 import { CarregarDadosCardapio } from './cardapio.action';
-import { CardapioService } from '../../cardapio/cardapio.service';
+
 import { of } from 'rxjs';
-import { DadosCardapio } from './models';
-import { CardapioStateModel, ProdutoState } from './cardapio.state';
+import { DadosCardapio } from '../../shared/models/cardapio';
+import { ProdutoState } from './cardapio.state';
+import { CardapioStateModel } from './models/cardapio-state.model';
+import { CardapioService } from '../../feature/cardapio/cardapio.service';
 
 class MockCardapioService {
   carregarDadosCardapio() {
-    // Retorna um observable simulado
     return of({
       categorias: [
         {

@@ -1,0 +1,30 @@
+<layout-principal [loading]="false" titulo="pedido Oliver">
+  <section class="pedido">
+    <h2>Resumo do Pedido</h2>
+    <div class="pedido__total" *ngIf="totalPedido$ | async as total">
+      <span>Total</span>
+      <span>{{ total | currency: 'BRL' }}</span>
+    </div>
+  </section>
+
+  <main>
+    <app-lista-produtos
+      [pedidos$]="pedido$"
+      (removerItem)="removerItemPedido($event)">
+    </app-lista-produtos>
+  </main>
+
+  <footer *ngIf="pedido$ | async as pedido">
+    <button
+      [hidden]="!pedido.length"
+      class="btn-acao"
+      mat-raised-button
+      color="primary"
+      (click)="finalizarPedido()">
+      finalizar pedido
+    </button>
+    <button mat-stroked-button color="primary" (click)="irParaCardapio()">
+      voltar
+    </button>
+  </footer>
+</layout-principal>

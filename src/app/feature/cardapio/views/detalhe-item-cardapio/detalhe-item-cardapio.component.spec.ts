@@ -7,8 +7,9 @@ import {
 } from '@angular/material/bottom-sheet';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from '../../cardapio.module';
-import { Util } from '../../../utils/util';
+
 import { NgxsModule } from '@ngxs/store';
+import { Util } from '../../../../utils/util';
 
 describe('DetalheItemCardapioComponent', () => {
   let component: DetalheItemCardapioComponent;

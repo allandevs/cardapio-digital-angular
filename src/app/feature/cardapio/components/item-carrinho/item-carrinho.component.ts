@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { PedidoState } from '../../../+state/pedido/pedido.state';
+import { PedidoState } from '../../../../+state/pedido/pedido.state';
 import { Observable } from 'rxjs';
-import { Pedido } from '../../../+state/pedido/models';
+import { Pedido } from '../../../../shared/models/pedido';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Navigate } from '@ngxs/router-plugin';
 

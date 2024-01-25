@@ -1,12 +1,28 @@
 h2 {
   margin: 1rem;
 }
-div {
-  display: flex !important;
+
+.pedido {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 10px;
+    span {
+      font-weight: 500;
+    }
+  }
 }
 
+main {
+  overflow: auto;
+  height: 60vh;
+}
 footer {
   display: flex;
   flex-direction: column;

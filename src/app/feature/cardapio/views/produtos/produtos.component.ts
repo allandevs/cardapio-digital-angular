@@ -1,11 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DadosCardapio, ItemCardapio } from '../../models';
+
 import { Select, Store } from '@ngxs/store';
-import { ProdutoState } from '../../../+state/cardapio/cardapio.state';
-import { CarregarDadosCardapio } from '../../../+state/cardapio/cardapio.action';
+import { ProdutoState } from '../../../../+state/cardapio/cardapio.state';
+import { CarregarDadosCardapio } from '../../../../+state/cardapio/cardapio.action';
 import { DetalheItemCardapioComponent } from '../detalhe-item-cardapio/detalhe-item-cardapio.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import {
+  DadosCardapio,
+  ItemCardapio,
+} from '../../../../shared/models/cardapio';
 
 @Component({
   selector: 'app-produtos',
