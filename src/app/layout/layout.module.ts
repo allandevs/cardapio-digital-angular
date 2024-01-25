@@ -5,12 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatMenuModule } from '@angular/material/menu';
 
 const materialModule = [
   MatToolbarModule,
   MatButtonModule,
   MatIconModule,
   MatProgressSpinnerModule,
+  MatMenuModule,
 ];
 @NgModule({
   declarations: [PrincipalComponent],

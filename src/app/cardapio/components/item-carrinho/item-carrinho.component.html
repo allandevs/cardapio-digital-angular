@@ -1,0 +1,15 @@
+<ng-container *ngIf="pedido$ | async as pedido">
+  <footer *ngIf="pedido.length">
+    <mat-toolbar>
+      <button mat-icon-button (click)="irParaPedido()">
+        <mat-icon
+          [matBadge]="calcularTotalItensCarrinho()"
+          matBadgeColor="accent"
+          matBadgeSize="large"
+          >add_shopping_cart</mat-icon
+        >
+        <span style="margin-left: 1.5rem">Ver pedido</span>
+      </button>
+    </mat-toolbar>
+  </footer>
+</ng-container>

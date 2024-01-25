@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrincipalComponent } from './principal.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { LayoutModule } from '../layout.module';
+import { NgxsModule } from '@ngxs/store';
 
 describe('PrincipalComponent', () => {
   let component: PrincipalComponent;
@@ -9,7 +11,7 @@ describe('PrincipalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [NgxsModule.forRoot(), LayoutModule],
       declarations: [PrincipalComponent],
     }).compileComponents();
 
