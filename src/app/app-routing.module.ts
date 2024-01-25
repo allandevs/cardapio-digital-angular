@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path: 'cardapio',
     loadChildren: () =>
-      import('./cardapio/cardapio.module').then(m => m.CardapioModule),
+      import('./feature/cardapio/cardapio.module').then(m => m.CardapioModule),
   },
   {
     path: 'pedido',
     loadChildren: () =>
-      import('./pedido/pedido.module').then(m => m.PedidoModule),
+      import('./feature/pedido/pedido.module').then(m => m.PedidoModule),
   },
   {
     path: 'error',

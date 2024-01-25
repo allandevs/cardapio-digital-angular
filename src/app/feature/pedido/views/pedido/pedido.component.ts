@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { PedidoState } from '../../../+state/pedido/pedido.state';
+
 import { Observable } from 'rxjs';
-import { Pedido } from '../../../+state/pedido/models';
-import { RemoverPedido } from '../../../+state/pedido/pedido.action';
+
 import { Navigate } from '@ngxs/router-plugin';
+import { PedidoState } from '../../../../+state/pedido/pedido.state';
+import { Pedido } from '../../../../shared/models/pedido';
+import { RemoverPedido } from '../../../../+state/pedido/pedido.action';
 
 @Component({
   selector: 'app-pedido',

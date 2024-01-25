@@ -5,7 +5,7 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { ItemCardapio } from '../../models';
+
 import {
   MAT_BOTTOM_SHEET_DATA,
   MatBottomSheetRef,
@@ -13,10 +13,11 @@ import {
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngxs/store';
-import { AdicionarPedido } from '../../../+state/pedido/pedido.action';
-import { Pedido } from '../../../+state/pedido/models';
+import { AdicionarPedido } from '../../../../+state/pedido/pedido.action';
+import { Pedido } from '../../../../shared/models/pedido';
 
-import { Util } from '../../../utils/util';
+import { ItemCardapio } from '../../../../shared/models/cardapio';
+import { Util } from '../../../../utils/util';
 
 @Component({
   selector: 'app-detalhe-item-cardapio',

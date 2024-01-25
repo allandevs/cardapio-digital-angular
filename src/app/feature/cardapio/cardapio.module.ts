@@ -4,7 +4,7 @@ import { ProdutosComponent } from './views/produtos/produtos.component';
 import { CardapioRoutingModule } from './cardapio-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { LayoutModule } from '../layout/layout.module';
+import { LayoutModule } from '../../layout/layout.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DetalheItemCardapioComponent } from './views/detalhe-item-cardapio/detalhe-item-cardapio.component';
 import { MatInputModule } from '@angular/material/input';

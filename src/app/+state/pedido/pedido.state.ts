@@ -1,11 +1,8 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
-import { Pedido } from './models';
+import { Pedido } from '../../shared/models/pedido';
 import { AdicionarPedido, RemoverPedido } from './pedido.action';
 import { Injectable } from '@angular/core';
-
-export interface PedidoStateModel {
-  pedidos: Pedido[];
-}
+import { PedidoStateModel } from './models/pedido-state.model';
 
 @State<PedidoStateModel>({
   name: 'pedido',

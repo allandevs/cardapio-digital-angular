@@ -1,4 +1,4 @@
-import { Pedido } from './models';
+import { Pedido } from '../../shared/models/pedido';
 
 export class AdicionarPedido {
   static readonly type = '[Pedido] Adicionar';
