@@ -90,7 +90,12 @@ jobs:
           restore-keys: |
             npm-${{ runner.os }}-
 
-      - name: Create Pull Request
-        run: gh pr create -B main -H develop --title "Merge develop into main" --body "Criado Pull Request automático pelo GitHub Action."
+      - name: Atualizar ou criar Pull Request
+        run: |
+          if gh pr list | grep -q develop; then
+            gh pr edit develop --body "Solicitação pull automática atualizada pelo GitHub Action."
+          else
+            gh pr create -B main -H develop --title "Merge develop into main" --body "Criado Pull Request automático pelo GitHub Action."
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
