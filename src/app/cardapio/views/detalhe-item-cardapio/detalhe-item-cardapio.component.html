@@ -1,26 +1,53 @@
-<mat-card class="card">
-  <mat-card-header>
-    <h2>
-      {{ itemCardapio.nome }}
-    </h2>
-  </mat-card-header>
-  <img
-    [attr.aria-label]="'Imagem do ' + itemCardapio.nome"
-    mat-card-image
-    [src]="itemCardapio.imagem"
-    alt="imagem item cardapio" />
-  <mat-card-content class="conteudo">
-    <p>
-      {{ itemCardapio.descricao }}
-    </p>
-  </mat-card-content>
-  <span class="card__preco">
-    {{ itemCardapio.preco | currency: 'BRL' }}
-  </span>
-</mat-card>
-
+<main>
+  <mat-card class="card">
+    <mat-card-header>
+      <h2>
+        {{ itemCardapio.nome }}
+      </h2>
+    </mat-card-header>
+    <img
+      [attr.aria-label]="'Imagem do ' + itemCardapio.nome"
+      mat-card-image
+      [src]="itemCardapio.imagem"
+      alt="imagem item cardapio" />
+    <mat-card-content class="conteudo">
+      <p>
+        {{ itemCardapio.descricao }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</main>
 <footer>
-  <button mat-stroked-button color="primary" (click)="fechar($event)">
+  <form [formGroup]="formulario">
+    <div class="flex-container">
+      <div class="input-group">
+        <button
+          [disabled]="quantidadeAtual === 1"
+          (click)="remover()"
+          mat-icon-button>
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <input formControlName="quantidade" type="number" />
+        <button (click)="adicionar()" mat-icon-button>
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </div>
+      <button
+        (click)="adicionarAoPedido(itemCardapio)"
+        class="btn-acao"
+        mat-raised-button
+        color="primary">
+        Adicionar
+        {{ itemCardapio.preco * quantidadeAtual | currency: 'BRL' }}
+      </button>
+    </div>
+  </form>
+
+  <button
+    class="btn-acao"
+    mat-stroked-button
+    color="primary"
+    (click)="fechar()">
     Fechar
   </button>
 </footer>
