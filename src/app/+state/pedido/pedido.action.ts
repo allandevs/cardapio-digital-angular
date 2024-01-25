@@ -9,3 +9,7 @@ export class RemoverPedido {
   static readonly type = '[Pedido] Remover';
   constructor(public pedidoId: number) {}
 }
+
+export class CalcularTotal {
+  static readonly type = '[Pedido] Calcular Total';
+}
