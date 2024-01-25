@@ -2,10 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProdutosComponent } from './produtos.component';
 import { NgxsModule } from '@ngxs/store';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ItemCardapio } from '../../models';
 import { DetalheItemCardapioComponent } from '../detalhe-item-cardapio/detalhe-item-cardapio.component';
+import { CardapioModule } from '../../cardapio.module';
 
 describe('ProdutosComponent', () => {
   let component: ProdutosComponent;
@@ -19,8 +20,7 @@ describe('ProdutosComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [ProdutosComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [NgxsModule.forRoot()],
+      imports: [NgxsModule.forRoot(), CardapioModule],
       providers: [
         {
           provide: MatBottomSheet,
@@ -40,16 +40,15 @@ describe('ProdutosComponent', () => {
 
   it('deve abrir o componente DetalheItemCardapio com os dados corretos', () => {
     const itemMock: ItemCardapio = {
+      id: 12345,
       nome: 'Item de Teste',
       preco: 10.0,
       descricao: 'Descrição',
       imagem: 'imagem.jpg',
     };
 
-    // Chama o método a ser testado
     component.abrirItemCardapio(itemMock);
 
-    // Verifica se a função open foi chamada corretamente
     expect(bottomSheetMock.open).toHaveBeenCalledWith(
       DetalheItemCardapioComponent,
       {

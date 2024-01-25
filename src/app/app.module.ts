@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { PedidoState } from './+state/pedido/pedido.state';
 
 registerLocaleData(ptBr);
 @NgModule({
@@ -22,7 +23,7 @@ registerLocaleData(ptBr);
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    NgxsModule.forRoot([ProdutoState]),
+    NgxsModule.forRoot([ProdutoState, PedidoState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     HttpClientModule,
