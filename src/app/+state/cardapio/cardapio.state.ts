@@ -31,6 +31,15 @@ export class ProdutoState {
 
   @Action(CarregarDadosCardapio)
   carregarDadosCardapio(ctx: StateContext<CardapioStateModel>) {
+    if (ctx.getState().categorias) {
+      const state = ctx.getState();
+      ctx.setState({
+        ...state,
+        processando$: false,
+      });
+      return;
+    }
+
     ctx.setState({
       processando$: true,
     });

@@ -13,11 +13,13 @@
             <mat-card-subtitle>{{
               item.preco | currency: 'BRL'
             }}</mat-card-subtitle>
-            <img
-              aria-hidden="true"
-              mat-card-md-image
-              [src]="item.imagem"
-              alt="imagem do produto" />
+            @defer {
+              <img
+                aria-hidden="true"
+                mat-card-md-image
+                [src]="item.imagem"
+                alt="imagem do produto" />
+            }
           </mat-card-title-group>
         </mat-card-header>
         <mat-card-content class="conteudo-descricao">
@@ -26,4 +28,5 @@
       </mat-card>
     </mat-tab>
   </mat-tab-group>
+  <app-item-carrinho></app-item-carrinho>
 </layout-principal>

@@ -32,6 +32,7 @@ describe('CardapioService', () => {
           nome: 'Teste',
           itens: [
             {
+              id: 12345,
               nome: 'Item de Teste',
               preco: 10.0,
               descricao: 'Descrição',

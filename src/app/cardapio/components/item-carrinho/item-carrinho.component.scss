@@ -1,0 +1,19 @@
+::ng-deep footer {
+  .mat-toolbar-single-row {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color: #000000e3;
+    color: #fff;
+
+    button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      left: 20px;
+    }
+  }
+}
