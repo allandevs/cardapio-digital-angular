@@ -1,0 +1,25 @@
+h2 {
+  margin: 1rem;
+}
+div {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  bottom: 0;
+  margin: 2rem;
+  gap: 1rem;
+  button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+}
