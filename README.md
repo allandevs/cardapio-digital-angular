@@ -1,6 +1,5 @@
 # Aplicação Oliver Cardápio Digital
 
-
 Este projeto está em fase de desenvolvimento utilizando Angular. Ele permite que estabelecimentos, como restaurantes, criem seus cardápios de forma digital, facilitando a visualização e interação dos clientes com os itens disponíveis. Principais recursos e tecnologias incluem:
 
 - Exibição do menu digital
@@ -87,6 +86,12 @@ Execute `npm run test:ci` para executar testes unitários usando o Jest.
 ## Execução do Lint
 
 Execute `npm run lint` para realizar a análise de erros de código.
+
+## Execução do Cypress
+
+- Executar `npm run cypress:open` possibilita a execução interativa e visualização dos testes escritos com o Cypress através do Cypress Test Runner.
+
+- Já o comando `npm run cypress:run` possibilita a execução sem interação gráfica, e os resultados dos testes são impressos no console. Este modo é adequado para ambientes de integração contínua e execução automatizada, proporcionando uma visualização direta no console do terminal.
 
 ## Autor
 
