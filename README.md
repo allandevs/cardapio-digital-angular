@@ -5,6 +5,7 @@ Este projeto está em fase de desenvolvimento utilizando Angular. Ele permite qu
 - Exibição do menu digital
 - Gerenciamento de estado com NGXS
 - Testes unitários
+- Testes automatizados
 - Integração contínua
 - Criação automática de pull requests usando GitHub Actions
 
