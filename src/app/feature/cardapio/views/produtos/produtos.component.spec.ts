@@ -4,9 +4,10 @@ import { ProdutosComponent } from './produtos.component';
 import { NgxsModule } from '@ngxs/store';
 
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { ItemCardapio } from '../../models';
+
 import { DetalheItemCardapioComponent } from '../detalhe-item-cardapio/detalhe-item-cardapio.component';
 import { CardapioModule } from '../../cardapio.module';
+import { ItemCardapio } from '../../../../shared/models/cardapio';
 
 describe('ProdutosComponent', () => {
   let component: ProdutosComponent;

@@ -1,4 +1,4 @@
-import { Pedido } from './models';
+import { Pedido } from '../../shared/models/pedido';
 
 export class AdicionarPedido {
   static readonly type = '[Pedido] Adicionar';
@@ -8,4 +8,8 @@ export class AdicionarPedido {
 export class RemoverPedido {
   static readonly type = '[Pedido] Remover';
   constructor(public pedidoId: number) {}
+}
+
+export class CalcularTotal {
+  static readonly type = '[Pedido] Calcular Total';
 }

@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Action, State, StateContext, Selector } from '@ngxs/store';
 import { CarregarDadosCardapio } from './cardapio.action';
-import { CardapioService } from '../../cardapio/cardapio.service';
+import { CardapioService } from '../../feature/cardapio/cardapio.service';
 import { catchError, map, tap } from 'rxjs';
-import { DadosCardapio } from './models';
-import { Navigate } from '@ngxs/router-plugin';
 
-export interface CardapioStateModel {
-  categorias?: DadosCardapio;
-  processando$?: boolean;
-}
+import { Navigate } from '@ngxs/router-plugin';
+import { CardapioStateModel } from './models/cardapio-state.model';
 
 @State<CardapioStateModel>({
   name: 'cardapio',

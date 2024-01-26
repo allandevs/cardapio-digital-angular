@@ -3,7 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CardapioService } from './cardapio.service';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, of } from 'rxjs';
-import { DadosCardapio } from './models';
+import { DadosCardapio } from '../../shared/models/cardapio';
 
 describe('CardapioService', () => {
   let service: CardapioService;

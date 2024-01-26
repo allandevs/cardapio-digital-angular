@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, delay, throwError } from 'rxjs';
-import { DadosCardapio } from './models';
+import { DadosCardapio } from '../../shared/models/cardapio';
 
 @Injectable({
   providedIn: 'root',

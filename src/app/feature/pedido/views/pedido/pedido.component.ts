@@ -1,10 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { PedidoState } from '../../../+state/pedido/pedido.state';
+
 import { Observable } from 'rxjs';
-import { Pedido } from '../../../+state/pedido/models';
-import { RemoverPedido } from '../../../+state/pedido/pedido.action';
+
 import { Navigate } from '@ngxs/router-plugin';
+import { PedidoState } from '../../../../+state/pedido/pedido.state';
+import { Pedido } from '../../../../shared/models/pedido';
+import {
+  CalcularTotal,
+  RemoverPedido,
+} from '../../../../+state/pedido/pedido.action';
 
 @Component({
   selector: 'app-pedido',
@@ -14,13 +19,27 @@ import { Navigate } from '@ngxs/router-plugin';
 export class PedidoComponent {
   private store = inject(Store);
 
+  constructor() {
+    this.calcularTotalPedido();
+  }
+
   @Select(PedidoState.getPedidos) pedido$!: Observable<Pedido[]>;
+  @Select(PedidoState.getTotal) totalPedido$!: Observable<number>;
 
   removerItemPedido(item: Pedido): void {
     this.store.dispatch(new RemoverPedido(item.id));
+    this.calcularTotalPedido();
   }
 
   irParaCardapio(): void {
     this.store.dispatch(new Navigate(['cardapio']));
+  }
+
+  private calcularTotalPedido(): void {
+    this.store.dispatch(new CalcularTotal());
+  }
+
+  finalizarPedido() {
+    alert('OPS, está funcionalidade está em desenvolvimento');
   }
 }
