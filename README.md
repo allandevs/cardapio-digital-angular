@@ -35,23 +35,23 @@ Estas instruções ajudarão você a obter uma cópia do projeto em execução e
 
 ```
 |-- app
-|-- +state
-|-- feature
-|-- cardapio
-|-- [+] components
-|-- [+] views
-|-- cardapio.module.ts
-|-- cardapio.routing.module.ts
-|-- cardapio.service.ts
-|-- pedido
-|-- [+] components
-|-- [+] views
-|-- pedido.module.ts
-|-- pedido.routing.module.ts
-|-- layout
-|-- shared
-|-- utils
-|-- error
+    |-- +state
+    |-- feature
+        |-- cardapio
+            |-- [+] components
+            |-- [+] views
+            |-- cardapio.module.ts
+            |-- cardapio.routing.module.ts
+            |-- cardapio.service.ts
+        |-- pedido
+            |-- [+] components
+            |-- [+] views
+            |-- pedido.module.ts
+            |-- pedido.routing.module.ts
+    |-- layout
+    |-- shared
+    |-- utils
+    |-- error
 ```
 
 ## Pré-requisitos
