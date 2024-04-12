@@ -30,20 +30,16 @@ export class ProdutosComponent implements OnInit {
   }
 
   abrirItemCardapio(item: ItemCardapio): void {
-    try {
-      const SheetRef = this.bottomSheet.open(DetalheItemCardapioComponent, {
-        data: item,
-      });
+    const SheetRef = this.bottomSheet.open(DetalheItemCardapioComponent, {
+      data: item,
+    });
 
-      SheetRef.afterDismissed().subscribe(() => {
-        this.exibirCarrinho.set(true);
-      });
+    SheetRef?.afterDismissed().subscribe(() => {
+      this.exibirCarrinho.set(true);
+    });
 
-      SheetRef.afterOpened().subscribe(() => {
-        this.exibirCarrinho.set(false);
-      });
-    } catch (error) {
-      console.error('Erro ao abrir bottomSheet:', error);
-    }
+    SheetRef?.afterOpened().subscribe(() => {
+      this.exibirCarrinho.set(false);
+    });
   }
 }

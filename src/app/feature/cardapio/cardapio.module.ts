@@ -19,6 +19,7 @@ import { ItemCarrinhoComponent } from './components/item-carrinho/item-carrinho.
 import { NgxsModule } from '@ngxs/store';
 import { ProdutoState } from '../../+state/cardapio/cardapio.state';
 import { PedidoState } from '../../+state/pedido/pedido.state';
+import { HttpClientModule } from '@angular/common/http';
 
 const moduleMaterial = [
   MatButtonModule,
@@ -42,6 +43,7 @@ const views = [ProdutosComponent, DetalheItemCardapioComponent];
     ...moduleMaterial,
     ReactiveFormsModule,
     NgxsModule.forFeature([ProdutoState, PedidoState]),
+    HttpClientModule,
   ],
 })
 export class CardapioModule {}
