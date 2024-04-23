@@ -8,7 +8,10 @@
       <span class="price">
         {{ item.preco * item.quantidade | currency: 'BRL' }}
       </span>
-      <button mat-icon-button (click)="emitRemoverItem(item)">
+      <button
+        mat-icon-button
+        (click)="emitRemoverItem(item)"
+        aria-label="remover item">
         <mat-icon color="primary">delete_outline</mat-icon>
       </button>
     </div>

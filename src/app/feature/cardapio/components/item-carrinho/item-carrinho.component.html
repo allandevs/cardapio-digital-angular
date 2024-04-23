@@ -3,6 +3,7 @@
     <mat-toolbar>
       <button mat-icon-button (click)="irParaPedido()">
         <mat-icon
+          [attr.aria-label]="calcularTotalItensCarrinho"
           [matBadge]="calcularTotalItensCarrinho()"
           matBadgeColor="accent"
           matBadgeSize="large"
