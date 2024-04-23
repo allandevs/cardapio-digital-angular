@@ -51,6 +51,30 @@ jobs:
       - name: Run tests
         run: npm run test:ci
 
+ test-automation:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
+      - name: Install dependencies
+        run: npm install
+      - name: Start server
+        run: npm run start & # Execute o servidor em segundo plano
+      - name: Run Cypress tests
+        run: npm run cypress:run
+
   build:
     runs-on: ubuntu-latest
     needs: test
