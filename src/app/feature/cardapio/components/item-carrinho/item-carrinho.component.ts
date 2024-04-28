@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { PedidoState } from '../../../../+state/pedido/pedido.state';
 import { Observable } from 'rxjs';
@@ -10,6 +10,7 @@ import { Navigate } from '@ngxs/router-plugin';
   selector: 'app-item-carrinho',
   templateUrl: './item-carrinho.component.html',
   styleUrl: './item-carrinho.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemCarrinhoComponent {
   private store = inject(Store);

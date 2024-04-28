@@ -2,6 +2,12 @@ div {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
+  .quantity {
+    margin-right: 10px;
+  }
+  .price {
+    margin-left: auto;
+  }
 }
 
 h3 {
