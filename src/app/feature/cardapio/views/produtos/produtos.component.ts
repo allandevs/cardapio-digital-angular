@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Select, Store } from '@ngxs/store';
@@ -23,14 +23,23 @@ export class ProdutosComponent implements OnInit {
 
   private store = inject(Store);
   private bottomSheet = inject(MatBottomSheet);
+  exibirCarrinho = signal(true);
 
   ngOnInit(): void {
     this.store.dispatch(new CarregarDadosCardapio());
   }
 
   abrirItemCardapio(item: ItemCardapio): void {
-    this.bottomSheet.open(DetalheItemCardapioComponent, {
+    const SheetRef = this.bottomSheet.open(DetalheItemCardapioComponent, {
       data: item,
+    });
+
+    SheetRef?.afterDismissed().subscribe(() => {
+      this.exibirCarrinho.set(true);
+    });
+
+    SheetRef?.afterOpened().subscribe(() => {
+      this.exibirCarrinho.set(false);
     });
   }
 }

@@ -5,15 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { NgxsModule } from '@ngxs/store';
-import { ProdutoState } from './+state/cardapio/cardapio.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 import { HttpClientModule } from '@angular/common/http';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
-import { PedidoState } from './+state/pedido/pedido.state';
+import { NgxsModule } from '@ngxs/store';
 
 registerLocaleData(ptBr);
 @NgModule({
@@ -23,7 +21,7 @@ registerLocaleData(ptBr);
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    NgxsModule.forRoot([ProdutoState, PedidoState]),
+    NgxsModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     HttpClientModule,

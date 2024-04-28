@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
+import { PedidoState } from '../../+state/pedido/pedido.state';
+import { NgxsModule } from '@ngxs/store';
 
 const materialModule = [
   MatListModule,
@@ -19,6 +21,12 @@ const materialModule = [
 
 @NgModule({
   declarations: [PedidoComponent, ListaProdutosComponent],
-  imports: [CommonModule, PedidoRoutingModule, ...materialModule, LayoutModule],
+  imports: [
+    CommonModule,
+    PedidoRoutingModule,
+    ...materialModule,
+    LayoutModule,
+    NgxsModule.forFeature([PedidoState]),
+  ],
 })
 export class PedidoModule {}

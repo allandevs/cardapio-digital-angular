@@ -16,6 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ItemCarrinhoComponent } from './components/item-carrinho/item-carrinho.component';
+import { NgxsModule } from '@ngxs/store';
+import { ProdutoState } from '../../+state/cardapio/cardapio.state';
+import { PedidoState } from '../../+state/pedido/pedido.state';
+import { HttpClientModule } from '@angular/common/http';
 
 const moduleMaterial = [
   MatButtonModule,
@@ -38,6 +42,8 @@ const views = [ProdutosComponent, DetalheItemCardapioComponent];
     LayoutModule,
     ...moduleMaterial,
     ReactiveFormsModule,
+    NgxsModule.forFeature([ProdutoState, PedidoState]),
+    HttpClientModule,
   ],
 })
 export class CardapioModule {}

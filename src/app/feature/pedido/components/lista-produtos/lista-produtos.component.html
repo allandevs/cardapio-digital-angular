@@ -1,14 +1,17 @@
 <mat-list role="list" *ngFor="let item of pedidos$ | async">
   <mat-list-item role="listitem">
     <div>
-      <span> {{ item.quantidade }}X </span>
+      <span class="quantity"> {{ item.quantidade }}X </span>
       <span>
         {{ item.nome }}
       </span>
-      <span>
+      <span class="price">
         {{ item.preco * item.quantidade | currency: 'BRL' }}
       </span>
-      <button mat-icon-button (click)="emitRemoverItem(item)">
+      <button
+        mat-icon-button
+        (click)="emitRemoverItem(item)"
+        aria-label="remover item">
         <mat-icon color="primary">delete_outline</mat-icon>
       </button>
     </div>
