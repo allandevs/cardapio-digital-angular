@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Action, State, StateContext, Selector } from '@ngxs/store';
-import { CarregarDadosCardapio } from './cardapio.action';
+import {
+  CarregarDadosCardapio,
+  CarregarItensMaisPedidos,
+} from './cardapio.action';
 import { CardapioService } from '../../feature/cardapio/cardapio.service';
 import { catchError, map, tap } from 'rxjs';
 
@@ -23,6 +26,11 @@ export class ProdutoState {
   @Selector()
   static itensCardapio(state: CardapioStateModel) {
     return state.categorias;
+  }
+
+  @Selector()
+  static itensCardapioMaisPedidos(state: CardapioStateModel) {
+    return state.itensMaisPedidos;
   }
 
   @Action(CarregarDadosCardapio)
@@ -50,6 +58,35 @@ export class ProdutoState {
       catchError(error => {
         console.error(error);
         return ctx.dispatch(new Navigate(['/error']));
+      })
+    );
+  }
+
+  @Action(CarregarItensMaisPedidos)
+  carregarItensMaisPedidos(ctx: StateContext<CardapioStateModel>) {
+    if (ctx.getState().itensMaisPedidos) {
+      const state = ctx.getState();
+      ctx.setState({
+        ...state,
+        processando$: false,
+      });
+      return;
+    }
+
+    ctx.setState({
+      processando$: true,
+    });
+
+    return this.cardapioService.carregarItensMaisPedidos().pipe(
+      map(itens => ({
+        ...ctx.getState(),
+        itensMaisPedidos: itens,
+        processando$: false,
+      })),
+      tap(newState => ctx.setState(newState)),
+      catchError(error => {
+        console.error(error);
+        return error;
       })
     );
   }

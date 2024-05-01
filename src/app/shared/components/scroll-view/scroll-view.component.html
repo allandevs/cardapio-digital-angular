@@ -1,0 +1,8 @@
+<div role="scroll" class="scroll__container" #scrollContainer>
+  <div
+    class="scroll__content"
+    (touchstart)="start($event)"
+    (touchmove)="move($event)">
+    <ng-content select="[scroll-content]"></ng-content>
+  </div>
+</div>
