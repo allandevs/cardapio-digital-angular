@@ -3,7 +3,10 @@ import { Observable } from 'rxjs';
 
 import { Select, Store } from '@ngxs/store';
 import { ProdutoState } from '../../../../+state/cardapio/cardapio.state';
-import { CarregarDadosCardapio } from '../../../../+state/cardapio/cardapio.action';
+import {
+  CarregarDadosCardapio,
+  CarregarItensMaisPedidos,
+} from '../../../../+state/cardapio/cardapio.action';
 import { DetalheItemCardapioComponent } from '../detalhe-item-cardapio/detalhe-item-cardapio.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import {
@@ -18,6 +21,8 @@ import {
 })
 export class ProdutosComponent implements OnInit {
   @Select(ProdutoState.itensCardapio) produtos$!: Observable<DadosCardapio>;
+  @Select(ProdutoState.itensCardapioMaisPedidos)
+  itensMaisPedidos$!: Observable<ItemCardapio[]>;
 
   @Select(ProdutoState.processandoDados) processando$!: Observable<boolean>;
 
@@ -26,7 +31,10 @@ export class ProdutosComponent implements OnInit {
   exibirCarrinho = signal(true);
 
   ngOnInit(): void {
-    this.store.dispatch(new CarregarDadosCardapio());
+    this.store.dispatch([
+      new CarregarDadosCardapio(),
+      new CarregarItensMaisPedidos(),
+    ]);
   }
 
   abrirItemCardapio(item: ItemCardapio): void {

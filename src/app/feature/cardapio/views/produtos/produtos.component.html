@@ -1,4 +1,20 @@
 <layout-principal [loading]="processando$ | async" titulo="cardápio Oliver">
+  <div
+    id="itens-mais-pedidos"
+    *ngIf="itensMaisPedidos$ | async as itensMaisPedidos">
+    <h2>Mais pedidos</h2>
+    <app-scroll-view>
+      <button
+        scroll-content
+        *ngFor="let item of itensMaisPedidos"
+        type="button"
+        (click)="abrirItemCardapio(item)">
+        <img [src]="item.imagem" [alt]="'imagem do ' + item.nome" />
+        <span> {{ item.nome }}</span>
+      </button>
+    </app-scroll-view>
+  </div>
+
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab
       *ngFor="let categoria of (produtos$ | async)?.categorias"

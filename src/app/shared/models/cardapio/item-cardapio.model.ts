@@ -5,3 +5,7 @@ export class ItemCardapio {
   descricao!: string;
   imagem!: string;
 }
+
+export interface ItensMaisPedido {
+  itens: ItemCardapio[];
+}

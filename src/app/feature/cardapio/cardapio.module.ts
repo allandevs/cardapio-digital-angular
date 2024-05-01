@@ -20,6 +20,7 @@ import { NgxsModule } from '@ngxs/store';
 import { ProdutoState } from '../../+state/cardapio/cardapio.state';
 import { PedidoState } from '../../+state/pedido/pedido.state';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../../shared/shared.module';
 
 const moduleMaterial = [
   MatButtonModule,
@@ -44,6 +45,7 @@ const views = [ProdutosComponent, DetalheItemCardapioComponent];
     ReactiveFormsModule,
     NgxsModule.forFeature([ProdutoState, PedidoState]),
     HttpClientModule,
+    SharedModule,
   ],
 })
 export class CardapioModule {}
