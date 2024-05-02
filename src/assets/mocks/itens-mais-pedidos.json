@@ -1,0 +1,46 @@
+{
+  "itens": [
+    {
+      "id": 3,
+      "nome": "Oliver Tudo",
+      "preco": 49.99,
+      "descricao": "Carne suculenta de 140g, muçarela derretida, tomate fresco e maionese de alho, servidos em um pão Brioche macio!!",
+      "imagem": "https://img.freepik.com/fotos-gratis/cheeseburguer-grelhado-com-tomate-cebola-e-fritas-gerado-por-ia_188544-43039.jpg?w=1060&t=st=1705717341~exp=1705717941~hmac=08db11afcb3cd2744e119bde8c79f5dd2ff2d07fab9335801837b336b2eb6522"
+    },
+    {
+      "id": 7,
+      "nome": "MilkShake c/ Chantilly",
+      "preco": 24.9,
+      "descricao": "chocolate, ovomaltine ou doce de leite com paçoca. 380 ML",
+      "imagem": "https://img.freepik.com/fotos-gratis/bebida-de-cafe-coberta-com-chantilly_140725-2726.jpg?w=740&t=st=1705854413~exp=1705855013~hmac=0fd50eabf062e0fa1886aa20e493c9c6f6dc9cf5a8d7d53d51a2dead2b90b13c"
+    },
+    {
+      "id": 1,
+      "nome": "Clássico",
+      "preco": 29.9,
+      "descricao": " Carne suculenta de 140g, muçarela derretida, tomate fresco e maionese de alho, servidos em um pão Brioche macio!!",
+      "imagem": "https://img.freepik.com/fotos-gratis/ainda-vida-de-delicioso-hamburguer-americano_23-2149637312.jpg?w=360&t=st=1705718132~exp=1705718732~hmac=90215ab9b71cc583e51283e5c14deb98b7781880b29c709f305764fcd2790508"
+    },
+    {
+      "id": 9,
+      "nome": "Torta espetacular da casa",
+      "preco": 34.9,
+      "descricao": "massa da casa, cream cheese, leite condensado, suco de limão e ovos. E uma incrível geleia caseira de frutas vermelhas como cobertura.",
+      "imagem": "https://as1.ftcdn.net/v2/jpg/06/38/41/16/1000_F_638411643_vwwQUYB8PjdfabzLYuXXA4jNQeJVw2tF.jpg"
+    },
+    {
+      "id": 5,
+      "nome": "Batata Turbo",
+      "preco": 39.99,
+      "descricao": "Porção de batata palito ou canoa com MUITO creme cheddar e farofa de bacon.",
+      "imagem": "https://img.freepik.com/fotos-premium/porcao-de-batatas-fritas-com-bacon-alface-cebola-verde-tomate-ketchup-e-maionese_309665-809.jpg?w=360"
+    },
+    {
+      "id": 2,
+      "nome": "Espetaculoso",
+      "preco": 37.9,
+      "descricao": "Carne suculenta de 140g, muçarela derretida, tomate fresco e maionese de alho, servidos em um pão Brioche macio!!",
+      "imagem": "https://img.freepik.com/fotos-premium/burger-costeleta-dupla-queijo-cheddar-duplo-bacon-cebola-frita-picles-molho-e-pao-artesanal_524291-99.jpg?w=900"
+    }
+  ]
+}

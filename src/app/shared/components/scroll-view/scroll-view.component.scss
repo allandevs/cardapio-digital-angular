@@ -1,0 +1,22 @@
+.scroll {
+  &__container {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 1rem 0;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: self-start;
+    -webkit-overflow-scrolling: touch; /* Para permitir o scrolling suave em dispositivos iOS */
+
+    img {
+      flex: 0 0 auto; /* Garante que as imagens não mudem de tamanho */
+      width: 113px;
+      max-height: 113px;
+      margin-right: 15px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+}
