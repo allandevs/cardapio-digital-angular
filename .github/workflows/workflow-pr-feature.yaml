@@ -3,7 +3,9 @@ name: Continuous Integration v2
 on:
   push:
     branches:
-      - develop
+      - feature/**
+      - feat/**
+      - fix/**
 
 jobs:
   lint:
@@ -113,12 +115,17 @@ jobs:
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             npm-${{ runner.os }}-
+      - name: Obter Branch Atual
+        run: |
+          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
+          echo "A branch atual é: $CURRENT_BRANCH"
+
       - name: Atualizar ou criar Pull Request
         run: |
-          if gh pr list | grep -q develop; then
-            gh pr edit develop --body "Solicitação pull automática atualizada pelo GitHub Action."
+          if gh pr list | grep -q "$CURRENT_BRANCH"; then
+            gh pr edit "$CURRENT_BRANCH" --body "Solicitação pull automática atualizada pelo GitHub Action."
           else
-            gh pr create -B main -H develop --title "Merge develop into main" --body "Criado Pull Request automático pelo GitHub Action."
+            gh pr create -B develop -H "$CURRENT_BRANCH" --title "Merge $CURRENT_BRANCH into develop" --body "Criado Pull Request automático pelo GitHub Action."
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
