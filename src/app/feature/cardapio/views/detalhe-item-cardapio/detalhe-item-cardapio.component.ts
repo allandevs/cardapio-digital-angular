@@ -1,8 +1,11 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   Inject,
   OnInit,
+  ViewChild,
   inject,
 } from '@angular/core';
 
@@ -18,6 +21,7 @@ import { Pedido } from '../../../../shared/models/pedido';
 
 import { ItemCardapio } from '../../../../shared/models/cardapio';
 import { Util } from '../../../../utils/util';
+import { A11FocusService } from '../../../../shared/util/a11-focus.service';
 
 @Component({
   selector: 'app-detalhe-item-cardapio',
@@ -25,7 +29,7 @@ import { Util } from '../../../../utils/util';
   styleUrl: './detalhe-item-cardapio.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DetalheItemCardapioComponent implements OnInit {
+export class DetalheItemCardapioComponent implements OnInit, AfterViewInit {
   itemCardapio!: ItemCardapio;
   formulario: FormGroup;
   quantidadeAtual: number = 1;
@@ -35,14 +39,21 @@ export class DetalheItemCardapioComponent implements OnInit {
   private bottomSheetRef = inject(
     MatBottomSheetRef<DetalheItemCardapioComponent>
   );
+  @ViewChild('titulo') titulo!: ElementRef;
 
-  constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data: ItemCardapio) {
+  constructor(
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: ItemCardapio,
+    private readonly a11: A11FocusService
+  ) {
     this.formulario = this.fb.group({
       quantidade: [1, { disabled: true }],
     });
     this.formulario.controls['quantidade'].disable();
   }
 
+  ngAfterViewInit() {
+    this.a11.focus(this.titulo);
+  }
   ngOnInit() {
     this.itemCardapio = this.data;
   }
