@@ -117,7 +117,7 @@ jobs:
             npm-${{ runner.os }}-
       - name: Obter Branch Atual
         run: |
-          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
+          CURRENT_BRANCH="${{ steps.get_branch.outputs.branch }}"
           echo "A branch atual é: $CURRENT_BRANCH"
 
       - name: Atualizar ou criar Pull Request
