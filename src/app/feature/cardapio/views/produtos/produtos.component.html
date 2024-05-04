@@ -9,8 +9,13 @@
         *ngFor="let item of itensMaisPedidos"
         type="button"
         (click)="abrirItemCardapio(item)">
-        <img [src]="item.imagem" [alt]="'imagem do ' + item.nome" />
-        <span> {{ item.nome }}</span>
+        <img
+          aria-hidden="true"
+          [src]="item.imagem"
+          [alt]="'imagem do ' + item.nome" />
+        <span [attr.aria-label]="item.nome + 'valor de ' + item.preco">
+          {{ item.nome }}</span
+        >
       </button>
     </app-scroll-view>
   </div>
@@ -20,6 +25,7 @@
       *ngFor="let categoria of (produtos$ | async)?.categorias"
       [label]="categoria.nome">
       <mat-card
+        role="button"
         class="card"
         *ngFor="let item of categoria.itens"
         (click)="abrirItemCardapio(item)">

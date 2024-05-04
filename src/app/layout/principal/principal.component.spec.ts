@@ -4,6 +4,7 @@ import { PrincipalComponent } from './principal.component';
 
 import { LayoutModule } from '../layout.module';
 import { NgxsModule } from '@ngxs/store';
+import { A11FocusService } from '../../shared/util/a11-focus.service';
 
 describe('PrincipalComponent', () => {
   let component: PrincipalComponent;
@@ -13,7 +14,14 @@ describe('PrincipalComponent', () => {
     TestBed.configureTestingModule({
       imports: [NgxsModule.forRoot(), LayoutModule],
       declarations: [PrincipalComponent],
-    }).compileComponents();
+      providers: [
+        A11FocusService,
+        {
+          provide: A11FocusService,
+          useValue: { focus: jest.fn() },
+        },
+      ],
+    });
 
     fixture = TestBed.createComponent(PrincipalComponent);
     component = fixture.componentInstance;
