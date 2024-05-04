@@ -116,12 +116,13 @@ jobs:
           restore-keys: |
             npm-${{ runner.os }}-
       - name: Obter Branch Atual
+        id: get_branch
         run: |
-          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
-          echo "A branch atual é: $CURRENT_BRANCH"
+          echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
 
       - name: Atualizar ou criar Pull Request
         run: |
+          CURRENT_BRANCH="${{ steps.get_branch.outputs.branch }}"
           if gh pr list | grep -q "$CURRENT_BRANCH"; then
             gh pr edit "$CURRENT_BRANCH" --body "Solicitação pull automática atualizada pelo GitHub Action."
           else
