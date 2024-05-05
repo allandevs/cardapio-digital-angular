@@ -1,22 +1,21 @@
 <div>
   <mat-toolbar color="primary">
-    <button
-      [matMenuTriggerFor]="menu"
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="irParaCardapio()">
-        <mat-icon>fastfood</mat-icon>
-        Cardápio
+    <div #buttonPrincipal>
+      <button [matMenuTriggerFor]="menu" mat-icon-button>
+        <mat-icon>menu</mat-icon>
       </button>
-      <button mat-menu-item (click)="irParaPedido()">
-        <mat-icon>add_shopping_cart</mat-icon>
-        Pedido
-      </button>
-    </mat-menu>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="irParaCardapio()">
+          <mat-icon>fastfood</mat-icon>
+          Cardápio
+        </button>
+        <button mat-menu-item (click)="irParaPedido()">
+          <mat-icon>add_shopping_cart</mat-icon>
+          Pedido
+        </button>
+      </mat-menu>
+    </div>
+
     <h1>{{ titulo }}</h1>
   </mat-toolbar>
 

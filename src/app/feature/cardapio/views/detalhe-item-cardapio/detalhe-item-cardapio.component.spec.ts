@@ -10,11 +10,14 @@ import { CardapioModule } from '../../cardapio.module';
 
 import { NgxsModule } from '@ngxs/store';
 import { Util } from '../../../../utils/util';
+import { A11FocusService } from '../../../../shared/util/a11-focus.service';
 
 describe('DetalheItemCardapioComponent', () => {
   let component: DetalheItemCardapioComponent;
   let fixture: ComponentFixture<DetalheItemCardapioComponent>;
   let bottomSheetRefMock: jest.Mocked<MatBottomSheetRef>;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let a11FocusService: A11FocusService;
 
   beforeEach(() => {
     bottomSheetRefMock = {
@@ -37,11 +40,16 @@ describe('DetalheItemCardapioComponent', () => {
           provide: Util,
           useValue: {},
         },
+        {
+          provide: A11FocusService,
+          useValue: { focus: jest.fn() },
+        },
       ],
     });
 
     fixture = TestBed.createComponent(DetalheItemCardapioComponent);
     component = fixture.componentInstance;
+    a11FocusService = TestBed.inject(A11FocusService);
     fixture.detectChanges();
   });
 
